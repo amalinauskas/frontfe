@@ -8,6 +8,12 @@ export const Header = styled.header`
 export const Navigation = styled.div`
   display: flex;
   justify-content: space-between;
+  /*  */
+  min-height: 5rem;
+
+  @media (max-width: 40em) {
+    flex-direction: column;
+  }
 `;
 
 export const Logo = styled.img`
@@ -18,9 +24,16 @@ export const Logo = styled.img`
 export const NavBar = styled.nav`
   display: flex;
   align-items: center;
-  /* background: blue; */
-  width: 20%;
   justify-content: space-between;
+  /* background: blue; */
+  /* width: 20%; */
+  /*  */
+  max-width: 5500px;
+  gap: 1rem;
+  @media (max-width: 40em) {
+    flex-direction: column;
+  }
+  /*  */
 
   a {
     text-decoration: none;
