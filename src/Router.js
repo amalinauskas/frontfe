@@ -6,6 +6,7 @@ import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import Add from "./Pages/Add";
 import Logs from "./Pages/Logs";
+import ChangePassword from "./Pages/Change";
 
 const token = localStorage.getItem("token");
 
@@ -37,6 +38,10 @@ const privateLinks = [
     path: "/logs",
     name: "Logs",
   },
+  {
+    path: "/change",
+    name: "Change password",
+  },
 ];
 
 const Router = () => {
@@ -49,6 +54,7 @@ const Router = () => {
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/add" element={<Add />} />
         <Route exact path="/logs" element={<Logs />} />
+        <Route exact path="/change" element={<ChangePassword />} />
       </Routes>
     </BrowserRouter>
   );

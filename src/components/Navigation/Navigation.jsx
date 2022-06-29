@@ -16,6 +16,7 @@ const publicLinks = [
 const privateLinks = [
   { path: "/logs", name: "Logs" },
   { path: "/add", name: "Add a memory" },
+  { path: "/change", name: "Change password" },
 ];
 
 const Navigation = () => {
