@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import LogsList from "../components/LogsList/LogsList";
 import Hero from "../components/Hero/Hero";
 import Section from "../components/Section/Section";
+import "./Home.css";
 
 const Logs = () => {
   const [data, setData] = useState();
@@ -30,7 +31,7 @@ const Logs = () => {
           subtitle="“Take care of all your memories. For you cannot relive them” – Bob Dylan"
         />
         <Section>
-          <p>Loading...</p>
+          <p className="loading">Loading logs...</p>
         </Section>
       </>
     );
@@ -45,7 +46,7 @@ const Logs = () => {
         />
         <Section>
           {" "}
-          <LogsList allPosts={data} />;
+          <LogsList allPosts={data} />
         </Section>
       </>
     );

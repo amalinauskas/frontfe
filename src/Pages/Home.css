@@ -10,3 +10,7 @@ div .image {
   height: 50vh;
   width: 100%;
 }
+
+.loading {
+  font-family: "Special Elite", cursive;
+}
