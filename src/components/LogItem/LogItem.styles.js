@@ -10,6 +10,9 @@ export const LogItem = styled.div`
   &:not(:first-child) {
     border-top: 0.1rem solid #cccccc;
   }
+  p {
+    color: #969696;
+  }
 `;
 
 export const ItemDate = styled.span`

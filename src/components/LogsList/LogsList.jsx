@@ -8,7 +8,12 @@ const LogsList = ({ allPosts }) => {
     <S.LogsList>
       {allPosts &&
         allPosts.map((x) => (
-          <LogItem key={x.title} title={x.title} post={x.post} />
+          <LogItem
+            key={x.title}
+            title={x.title}
+            post={x.post}
+            created_at={x.created_at.slice(0, -14)}
+          />
         ))}
     </S.LogsList>
   );
