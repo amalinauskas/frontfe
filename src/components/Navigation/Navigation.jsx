@@ -29,7 +29,11 @@ const Navigation = () => {
           <S.Logo src={Logo} alt="text"></S.Logo>
           <S.NavBar>
             {links &&
-              links.map((link) => <Link to={link.path}>{link.name}</Link>)}
+              links.map((link, index) => (
+                <Link to={link.path} key={index}>
+                  {link.name}
+                </Link>
+              ))}
             {localStorage.getItem("token") && (
               <Button
                 handleClick={() => {
@@ -48,7 +52,7 @@ const Navigation = () => {
 };
 
 Navigation.propTypes = {
-  title: PropTypes.string.isRequired,
+  // title: PropTypes.string.isRequired,
   links: PropTypes.arrayOf(
     PropTypes.shape({
       path: PropTypes.string.isRequired,

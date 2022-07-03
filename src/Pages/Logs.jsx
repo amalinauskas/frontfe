@@ -46,7 +46,7 @@ const Logs = () => {
         />
         <Section>
           {" "}
-          <LogsList allPosts={data} />
+          <LogsList allPosts={data}></LogsList>
         </Section>
       </>
     );
