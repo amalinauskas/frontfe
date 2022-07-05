@@ -1,4 +1,3 @@
-// import React from "react";
 import React, { useState } from "react";
 import RegisterForm from "../components/RegisterForm/RegisterForm";
 import Notification from "../components/Notification/Notification";

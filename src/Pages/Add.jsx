@@ -1,10 +1,6 @@
-// import React from "react";
 import React, { useState } from "react";
-// import RegisterForm from "../components/RegisterForm/RegisterForm";
 import Notification from "../components/Notification/Notification";
 import AddLog from "../components/AddLog/AddLog";
-
-// const token = localStorage.getItem("token");
 
 const AddPost = () => {
   const [error, setError] = useState();

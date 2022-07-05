@@ -2,8 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import * as S from "./LogsList.styles";
 import LogItem from "../LogItem/LogItem";
+// import ButtonDu from "../ButtonDu/ButtonDu";
 
-const LogsList = ({ allPosts }) => {
+const LogsList = ({ allPosts, handleSubmit }) => {
   return (
     <S.LogsList>
       {allPosts &&
@@ -12,8 +13,13 @@ const LogsList = ({ allPosts }) => {
             key={x.title}
             title={x.title}
             post={x.post}
+            id={x.id}
             created_at={x.created_at.slice(0, -14)}
-          />
+          >
+            <button type="submit" onClick={handleSubmit} id={x.id} value={x.id}>
+              Delete
+            </button>
+          </LogItem>
         ))}
     </S.LogsList>
   );

@@ -52,7 +52,6 @@ const Navigation = () => {
 };
 
 Navigation.propTypes = {
-  // title: PropTypes.string.isRequired,
   links: PropTypes.arrayOf(
     PropTypes.shape({
       path: PropTypes.string.isRequired,

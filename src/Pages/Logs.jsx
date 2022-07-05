@@ -5,7 +5,8 @@ import Section from "../components/Section/Section";
 import "./Home.css";
 
 const Logs = () => {
-  const [data, setData] = useState();
+  const [logs, setLogs] = useState();
+  const [error, setError] = useState();
 
   const getData = async () => {
     const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/v1/logs`, {
@@ -13,31 +14,58 @@ const Logs = () => {
         authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     });
-    const resData = await res.json();
+    const data = await res.json();
 
-    setData(resData);
+    setLogs(data);
+    console.log(data);
   };
 
   useEffect(() => {
     getData();
   }, []);
+  //
+  const removeLog = async (id) => {
+    try {
+      const res = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/v1/logs/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("token")}`,
 
-  if (!data) {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(),
+        }
+      );
+      const data = await res.json();
+      console.log(data);
+
+      if (data.err) {
+        return setError(data.err);
+      }
+      getData();
+      return setError("Succesfully removed a post");
+    } catch (err) {
+      return setError(err.message);
+    }
+  };
+  //
+  if (!logs) {
     return (
       <>
-        {" "}
         <Hero
           title="Your Logs"
           subtitle="“Take care of all your memories. For you cannot relive them” – Bob Dylan"
         />
         <Section>
-          <p className="loading">Loading logs...</p>
+          <p className="loading">Loading logs...{error}</p>
         </Section>
       </>
     );
   }
 
-  if (data) {
+  if (logs) {
     return (
       <>
         <Hero
@@ -45,8 +73,13 @@ const Logs = () => {
           subtitle="“Take care of all your memories. For you cannot relive them” – Bob Dylan"
         />
         <Section>
-          {" "}
-          <LogsList allPosts={data}></LogsList>
+          <LogsList
+            allPosts={logs}
+            handleSubmit={(e) => {
+              removeLog(e.currentTarget.value);
+              console.log(Number(e.currentTarget.value));
+            }}
+          ></LogsList>
         </Section>
       </>
     );

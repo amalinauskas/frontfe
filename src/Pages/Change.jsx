@@ -1,10 +1,6 @@
-// import React from "react";
 import React, { useState } from "react";
-// import RegisterForm from "../components/RegisterForm/RegisterForm";
 import Notification from "../components/Notification/Notification";
 import ChangePsw from "../components/ChangePsw/ChangePsw";
-
-// const token = localStorage.getItem("token");
 
 const ChangePassword = () => {
   const [error, setError] = useState();
