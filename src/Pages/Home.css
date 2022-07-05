@@ -14,3 +14,12 @@ div .image {
 .loading {
   font-family: "Special Elite", cursive;
 }
+
+.noPosts {
+  margin-top: 1rem;
+  width: 100%;
+  text-align: center;
+  font-family: "Special Elite", cursive;
+  color: #7d7d7d;
+  font-size: 2rem;
+}

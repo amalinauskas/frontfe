@@ -18,7 +18,6 @@ const Logs = () => {
     const data = await res.json();
 
     setLogs(data);
-    // console.log(data);
   };
 
   useEffect(() => {
@@ -40,7 +39,6 @@ const Logs = () => {
         }
       );
       const data = await res.json();
-      // console.log(data);
 
       if (data.err) {
         return setError(data.err);
@@ -75,13 +73,19 @@ const Logs = () => {
           subtitle="“Take care of all your memories. For you cannot relive them” – Bob Dylan"
         />
         <Section>
-          <LogsList
-            allPosts={logs}
-            handleSubmit={(e) => {
-              removeLog(e.currentTarget.value);
-              // console.log(Number(e.currentTarget.value));
-            }}
-          ></LogsList>
+          <>
+            {logs && logs.length === 0 && (
+              <div className="noPosts">Only empty spaces can be filled...</div>
+            )}
+            {logs && logs.length > 0 && (
+              <LogsList
+                allPosts={logs}
+                handleSubmit={(e) => {
+                  removeLog(e.currentTarget.value);
+                }}
+              ></LogsList>
+            )}
+          </>
         </Section>
       </>
     );
