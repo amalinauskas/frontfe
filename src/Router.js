@@ -31,10 +31,6 @@ const privateLinks = [
     name: "Add",
   },
   {
-    path: "/dashoard",
-    name: "Dashboard",
-  },
-  {
     path: "/logs",
     name: "Logs",
   },
