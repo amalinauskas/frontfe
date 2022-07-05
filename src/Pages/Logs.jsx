@@ -3,6 +3,7 @@ import LogsList from "../components/LogsList/LogsList";
 import Hero from "../components/Hero/Hero";
 import Section from "../components/Section/Section";
 import "./Home.css";
+import Notification from "../components/Notification/Notification";
 
 const Logs = () => {
   const [logs, setLogs] = useState();
@@ -17,7 +18,7 @@ const Logs = () => {
     const data = await res.json();
 
     setLogs(data);
-    console.log(data);
+    // console.log(data);
   };
 
   useEffect(() => {
@@ -39,7 +40,7 @@ const Logs = () => {
         }
       );
       const data = await res.json();
-      console.log(data);
+      // console.log(data);
 
       if (data.err) {
         return setError(data.err);
@@ -59,7 +60,8 @@ const Logs = () => {
           subtitle="“Take care of all your memories. For you cannot relive them” – Bob Dylan"
         />
         <Section>
-          <p className="loading">Loading logs...{error}</p>
+          <p className="loading">Loading logs...</p>
+          <p>{error && <Notification>{error}</Notification>}</p>
         </Section>
       </>
     );
@@ -77,7 +79,7 @@ const Logs = () => {
             allPosts={logs}
             handleSubmit={(e) => {
               removeLog(e.currentTarget.value);
-              console.log(Number(e.currentTarget.value));
+              // console.log(Number(e.currentTarget.value));
             }}
           ></LogsList>
         </Section>
