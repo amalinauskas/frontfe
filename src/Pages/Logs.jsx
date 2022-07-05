@@ -68,6 +68,7 @@ const Logs = () => {
   if (logs) {
     return (
       <>
+        {error && <Notification>{error}</Notification>}
         <Hero
           title="Your Logs"
           subtitle="“Take care of all your memories. For you cannot relive them” – Bob Dylan"
