@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import * as S from "./LogsList.styles";
 import LogItem from "../LogItem/LogItem";
-// import ButtonDu from "../ButtonDu/ButtonDu";
 
 const LogsList = ({ allPosts, handleSubmit }) => {
   return (
