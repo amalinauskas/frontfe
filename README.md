@@ -14,7 +14,7 @@ Back-end code: https://github.com/amalinauskas/backendLast
 🔹Why did I build this project?
 🔸This was one of my projects for ReactJs test.
 
-Profect created with ReactJs + NodeJs + mySQL.
+Project created with ReactJs + NodeJs + mySQL.
 
 To start projectyou need to install all dependencies or devDependencies from a package.json file, by typing in console:
 ```
