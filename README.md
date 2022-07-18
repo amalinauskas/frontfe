@@ -1,5 +1,7 @@
 # Diary website 📰
 
+Link to project: https://lionfish-app-w3gsq.ondigitalocean.app/
+
 📋 Mobile friendly website for You to write and track your diary posts.
 
 ✅ Registration/login/change password form.
